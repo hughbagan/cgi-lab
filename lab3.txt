@@ -1,0 +1,65 @@
+CMPUT 404 Wi21
+Lab 3
+Hugh Bagan
+https://github.com/hughbagan/cgi-lab
+
+
+Question 1
+How do you inspect all environment variables in Python?
+--------------------
+os.environ['VIRTUAL_ENV'] or just os.environ for all of them.
+
+
+Question 2
+What environment variable contains the query parameter data?
+--------------------
+The QUERY_STRING env variable contains the query.
+
+
+Question 3
+What environment variable contains information about the user's browser?
+--------------------
+HTTP_USER_AGENT is the env variable that tells us the user's browser
+(among other things).
+
+
+Question 4
+How does the POSTed data come to the CGI script?
+--------------------
+After getting the CONTENT_LENGTH from the environment variable,
+it can be read in from stdin (provided the POST is directed
+at the CGI script).
+
+
+Question 5
+What is the HTTP header syntax to set a cookie from the server?
+--------------------
+It is set as a header, therefore it needs to be put before content type is declared.
+"Set-Cookie: name=value"
+
+
+Question 6
+What is the HTTP header syntax the browser uses to send the cookie back?
+--------------------
+It just says...
+`Cookie: auth=True`
+Not sure what you mean by "header syntax", but I can see the cookie
+in the request headers.
+
+
+Question 7
+In your own words, what are cookies used for?
+--------------------
+Cookies are for storing persistent information in a browser session
+(or also between browser sessions?) that the website will want to
+use again later.
+
+
+Question 8
+What is the link to your code on Github?
+--------------------
+https://github.com/hughbagan/cgi-lab
+
+
+(Optional: capture the cookie using proxy.py)
+
