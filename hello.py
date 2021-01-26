@@ -64,7 +64,6 @@ def serve_html_info():
             print("<p>Cookie is incorrect somehow</p>")
     else:
         this_script = __file__.split('/')[-1:][0] # E.Big stackoverflow.com/a/46390072
-        print("<p>"+this_script+"</p>")
         print(templates.login_page(this_script)) # pass in this script's name
     
     print("""

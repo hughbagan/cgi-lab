@@ -24,7 +24,7 @@ import errno
 # Change this to change the proxy's listen port.
 PORT = 12345
 # Change this to change the hostname and port to proxy to.
-PROXY_TO = ("localhost", 8000)
+PROXY_TO = ("localhost", 8080)
 
 listen_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 listen_socket.bind(("0.0.0.0", PORT))
@@ -55,7 +55,7 @@ try:
                 skip = False
                 try:
                     part = client_socket.recv(1024)
-                except socket.error, exception:
+                except socket.error as exception:
                     if exception.errno == errno.EAGAIN:
                         skip = True
                     else:
@@ -78,7 +78,7 @@ try:
                 skip = False
                 try:
                     part = remote_socket.recv(1024)
-                except socket.error, exception:
+                except socket.error as exception:
                     if exception.errno == errno.EAGAIN:
                         skip = True
                     else:
